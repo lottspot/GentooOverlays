@@ -1,0 +1,517 @@
+diff -aurx .git bup-upstream/Makefile bup-patched/Makefile
+--- bup-upstream/Makefile
++++ bup-patched/Makefile
+@@ -19,7+19,7 @@
+ INSTALL=install
+-PYTHON=python
++PYTHON=python2
+ PREFIX=/usr
+ MANDIR=$(DESTDIR)$(PREFIX)/share/man
+ DOCDIR=$(DESTDIR)$(PREFIX)/share/doc/bup
+ BINDIR=$(DESTDIR)$(PREFIX)/bin
+ LIBDIR=$(DESTDIR)$(PREFIX)/lib/bup
+diff -aurx .git bup-upstream/cmd/bloom-cmd.py bup-patched/cmd/bloom-cmd.py
+--- bup-upstream/cmd/bloom-cmd.py	2013-05-22 18:46:04.017530131 -0700
++++ bup-patched/cmd/bloom-cmd.py	2013-05-22 18:55:33.559671265 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys, glob, tempfile
+ from bup import options, git, bloom
+ from bup.helpers import *
+diff -aurx .git bup-upstream/cmd/daemon-cmd.py bup-patched/cmd/daemon-cmd.py
+--- bup-upstream/cmd/daemon-cmd.py	2013-05-22 18:46:04.017530131 -0700
++++ bup-patched/cmd/daemon-cmd.py	2013-05-22 18:55:33.516337245 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys, getopt, socket, subprocess, fcntl
+ from bup import options, path
+ from bup.helpers import *
+diff -aurx .git bup-upstream/cmd/damage-cmd.py bup-patched/cmd/damage-cmd.py
+--- bup-upstream/cmd/damage-cmd.py	2013-05-22 18:46:04.017530131 -0700
++++ bup-patched/cmd/damage-cmd.py	2013-05-22 18:55:33.566338058 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys, os, random
+ from bup import options
+ from bup.helpers import *
+diff -aurx .git bup-upstream/cmd/drecurse-cmd.py bup-patched/cmd/drecurse-cmd.py
+--- bup-upstream/cmd/drecurse-cmd.py	2013-05-22 18:46:04.017530131 -0700
++++ bup-patched/cmd/drecurse-cmd.py	2013-05-22 18:55:33.599671892 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ from bup import options, drecurse
+ from bup.helpers import *
+
+diff -aurx .git bup-upstream/cmd/fsck-cmd.py bup-patched/cmd/fsck-cmd.py
+--- bup-upstream/cmd/fsck-cmd.py	2013-05-22 18:46:04.017530131 -0700
++++ bup-patched/cmd/fsck-cmd.py	2013-05-22 18:55:33.606338657 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys, os, glob, subprocess
+ from bup import options, git
+ from bup.helpers import *
+diff -aurx .git bup-upstream/cmd/ftp-cmd.py bup-patched/cmd/ftp-cmd.py
+--- bup-upstream/cmd/ftp-cmd.py	2013-05-22 18:46:04.017530131 -0700
++++ bup-patched/cmd/ftp-cmd.py	2013-05-22 18:55:33.556337883 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys, os, stat, fnmatch
+ from bup import options, git, shquote, vfs, ls
+ from bup.helpers import *
+diff -aurx .git bup-upstream/cmd/fuse-cmd.py bup-patched/cmd/fuse-cmd.py
+--- bup-upstream/cmd/fuse-cmd.py	2013-05-22 18:46:04.017530131 -0700
++++ bup-patched/cmd/fuse-cmd.py	2013-05-22 18:55:33.479670021 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys, os, errno
+ from bup import options, git, vfs
+ from bup.helpers import *
+diff -aurx .git bup-upstream/cmd/help-cmd.py bup-patched/cmd/help-cmd.py
+--- bup-upstream/cmd/help-cmd.py	2013-05-22 18:46:04.017530131 -0700
++++ bup-patched/cmd/help-cmd.py	2013-05-22 18:55:33.576338169 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys, os, glob
+ from bup import options, path
+ 
+diff -aurx .git bup-upstream/cmd/index-cmd.py bup-patched/cmd/index-cmd.py
+--- bup-upstream/cmd/index-cmd.py	2013-05-22 18:46:04.017530131 -0700
++++ bup-patched/cmd/index-cmd.py	2013-05-22 18:55:33.573004774 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ 
+ import sys, stat, time, os, errno, re
+ from bup import metadata, options, git, index, drecurse, hlinkdb
+diff -aurx .git bup-upstream/cmd/init-cmd.py bup-patched/cmd/init-cmd.py
+--- bup-upstream/cmd/init-cmd.py	2013-05-22 18:46:04.017530131 -0700
++++ bup-patched/cmd/init-cmd.py	2013-05-22 18:55:33.593005084 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys
+ 
+ from bup import git, options, client
+diff -aurx .git bup-upstream/cmd/join-cmd.py bup-patched/cmd/join-cmd.py
+--- bup-upstream/cmd/join-cmd.py	2013-05-22 18:46:04.017530131 -0700
++++ bup-patched/cmd/join-cmd.py	2013-05-22 18:55:33.519670638 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys
+ from bup import git, options, client
+ from bup.helpers import *
+diff -aurx .git bup-upstream/cmd/list-idx-cmd.py bup-patched/cmd/list-idx-cmd.py
+--- bup-upstream/cmd/list-idx-cmd.py	2013-05-22 18:46:04.017530131 -0700
++++ bup-patched/cmd/list-idx-cmd.py	2013-05-22 18:55:33.533004180 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys, os
+ from bup import git, options
+ from bup.helpers import *
+diff -aurx .git bup-upstream/cmd/ls-cmd.py bup-patched/cmd/ls-cmd.py
+--- bup-upstream/cmd/ls-cmd.py	2013-05-22 18:46:04.017530131 -0700
++++ bup-patched/cmd/ls-cmd.py	2013-05-22 18:55:33.579671594 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys
+ from bup import git, vfs, ls
+ from bup.helpers import *
+diff -aurx .git bup-upstream/cmd/margin-cmd.py bup-patched/cmd/margin-cmd.py
+--- bup-upstream/cmd/margin-cmd.py	2013-05-22 18:46:04.017530131 -0700
++++ bup-patched/cmd/margin-cmd.py	2013-05-22 18:55:33.483003433 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys, struct, math
+ from bup import options, git, _helpers
+ from bup.helpers import *
+diff -aurx .git bup-upstream/cmd/memtest-cmd.py bup-patched/cmd/memtest-cmd.py
+--- bup-upstream/cmd/memtest-cmd.py	2013-05-22 18:46:04.017530131 -0700
++++ bup-patched/cmd/memtest-cmd.py	2013-05-22 18:55:33.433002495 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys, re, struct, time, resource
+ from bup import git, bloom, midx, options, _helpers
+ from bup.helpers import *
+diff -aurx .git bup-upstream/cmd/meta-cmd.py bup-patched/cmd/meta-cmd.py
+--- bup-upstream/cmd/meta-cmd.py	2013-05-22 18:46:04.017530131 -0700
++++ bup-patched/cmd/meta-cmd.py	2013-05-22 18:55:33.439669304 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ 
+ # Copyright (C) 2010 Rob Browning
+ #
+diff -aurx .git bup-upstream/cmd/midx-cmd.py bup-patched/cmd/midx-cmd.py
+--- bup-upstream/cmd/midx-cmd.py	2013-05-22 18:46:04.020863505 -0700
++++ bup-patched/cmd/midx-cmd.py	2013-05-22 18:55:33.513003871 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys, math, struct, glob, resource
+ import tempfile
+ from bup import options, git, midx, _helpers, xstat
+diff -aurx .git bup-upstream/cmd/mux-cmd.py bup-patched/cmd/mux-cmd.py
+--- bup-upstream/cmd/mux-cmd.py	2013-05-22 18:46:04.020863505 -0700
++++ bup-patched/cmd/mux-cmd.py	2013-05-22 18:55:33.536337590 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import os, sys, subprocess, struct
+ from bup import options
+ from bup.helpers import *
+diff -aurx .git bup-upstream/cmd/newliner-cmd.py bup-patched/cmd/newliner-cmd.py
+--- bup-upstream/cmd/newliner-cmd.py	2013-05-22 18:46:04.020863505 -0700
++++ bup-patched/cmd/newliner-cmd.py	2013-05-22 18:55:33.599671892 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys, os, re
+ from bup import options
+ from bup import _helpers   # fixes up sys.argv on import
+diff -aurx .git bup-upstream/cmd/on-cmd.py bup-patched/cmd/on-cmd.py
+--- bup-upstream/cmd/on-cmd.py	2013-05-22 18:46:04.020863505 -0700
++++ bup-patched/cmd/on-cmd.py	2013-05-22 18:55:33.496336977 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys, os, struct, getopt, subprocess, signal
+ from bup import options, ssh, path
+ from bup.helpers import *
+diff -aurx .git bup-upstream/cmd/on--server-cmd.py bup-patched/cmd/on--server-cmd.py
+--- bup-upstream/cmd/on--server-cmd.py	2013-05-22 18:46:04.020863505 -0700
++++ bup-patched/cmd/on--server-cmd.py	2013-05-22 18:55:33.443002683 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys, os, struct
+ from bup import options, helpers
+ 
+diff -aurx .git bup-upstream/cmd/random-cmd.py bup-patched/cmd/random-cmd.py
+--- bup-upstream/cmd/random-cmd.py	2013-05-22 18:46:04.020863505 -0700
++++ bup-patched/cmd/random-cmd.py	2013-05-22 18:55:33.429669133 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys
+ from bup import options, _helpers
+ from bup.helpers import *
+diff -aurx .git bup-upstream/cmd/restore-cmd.py bup-patched/cmd/restore-cmd.py
+--- bup-upstream/cmd/restore-cmd.py	2013-05-22 18:46:04.020863505 -0700
++++ bup-patched/cmd/restore-cmd.py	2013-05-22 18:55:33.459669693 -0700
+@@ -1,13 +1,13 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import errno, sys, stat
+ from bup import options, git, metadata, vfs
+ from bup.helpers import *
+ 
+ optspec = """
+ bup restore [-C outdir] </branch/revision/path/to/dir ...>
+ --
+ C,outdir=   change to given outdir before extracting files
+ numeric-ids restore numeric IDs (user, group, etc.) rather than names
+ v,verbose   increase log output (can be used more than once)
+ q,quiet     don't show progress meter
+ """
+ from bup.helpers import *
+diff -aurx .git bup-upstream/cmd/save-cmd.py bup-patched/cmd/save-cmd.py
+--- bup-upstream/cmd/save-cmd.py	2013-05-22 18:46:04.020863505 -0700
++++ bup-patched/cmd/save-cmd.py	2013-05-22 18:55:33.423002797 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys, stat, time, math
+ from bup import hashsplit, git, options, index, client, metadata, hlinkdb
+ from bup.helpers import *
+diff -aurx .git bup-upstream/cmd/server-cmd.py bup-patched/cmd/server-cmd.py
+--- bup-upstream/cmd/server-cmd.py	2013-05-22 18:46:04.020863505 -0700
++++ bup-patched/cmd/server-cmd.py	2013-05-22 18:55:33.526337423 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import os, sys, struct
+ from bup import options, git
+ from bup.helpers import *
+diff -aurx .git bup-upstream/cmd/split-cmd.py bup-patched/cmd/split-cmd.py
+--- bup-upstream/cmd/split-cmd.py	2013-05-22 18:46:04.020863505 -0700
++++ bup-patched/cmd/split-cmd.py	2013-05-22 18:55:33.603005274 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys, time
+ from bup import hashsplit, git, options, client
+ from bup.helpers import *
+diff -aurx .git bup-upstream/cmd/tag-cmd.py bup-patched/cmd/tag-cmd.py
+--- bup-upstream/cmd/tag-cmd.py	2013-05-22 18:46:04.020863505 -0700
++++ bup-patched/cmd/tag-cmd.py	2013-05-22 18:55:33.416336524 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ """Tag a commit in the bup repository.
+ Creating a tag on a commit can be used for avoiding automatic cleanup from
+ removing this commit due to old age.
+diff -aurx .git bup-upstream/cmd/tick-cmd.py bup-patched/cmd/tick-cmd.py
+--- bup-upstream/cmd/tick-cmd.py	2013-05-22 18:46:04.020863505 -0700
++++ bup-patched/cmd/tick-cmd.py	2013-05-22 18:55:33.446336181 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys, time
+ from bup import options
+ 
+diff -aurx .git bup-upstream/cmd/version-cmd.py bup-patched/cmd/version-cmd.py
+--- bup-upstream/cmd/version-cmd.py	2013-05-22 18:46:04.020863505 -0700
++++ bup-patched/cmd/version-cmd.py	2013-05-22 18:55:33.453003018 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys
+ from bup import options
+ from bup.helpers import *
+diff -aurx .git bup-upstream/cmd/web-cmd.py bup-patched/cmd/web-cmd.py
+--- bup-upstream/cmd/web-cmd.py	2013-05-22 18:46:04.020863505 -0700
++++ bup-patched/cmd/web-cmd.py	2013-05-22 18:55:33.466336450 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys, stat, urllib, mimetypes, posixpath, time
+ import tornado.httpserver
+ import tornado.ioloop
+diff -aurx .git bup-upstream/cmd/xstat-cmd.py bup-patched/cmd/xstat-cmd.py
+--- bup-upstream/cmd/xstat-cmd.py	2013-05-22 18:46:04.020863505 -0700
++++ bup-patched/cmd/xstat-cmd.py	2013-05-22 18:55:33.539670949 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ # Copyright (C) 2010 Rob Browning
+ #
+ # This code is covered under the terms of the GNU Library General
+diff -aurx .git bup-upstream/lib/tornado/auth.py bup-patched/lib/tornado/auth.py
+--- bup-upstream/lib/tornado/auth.py	2013-05-22 18:46:04.034197027 -0700
++++ bup-patched/lib/tornado/auth.py	2013-05-22 18:55:33.679673140 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ #
+ # Copyright 2009 Facebook
+ #
+diff -aurx .git bup-upstream/lib/tornado/autoreload.py bup-patched/lib/tornado/autoreload.py
+--- bup-upstream/lib/tornado/autoreload.py	2013-05-22 18:46:04.034197027 -0700
++++ bup-patched/lib/tornado/autoreload.py	2013-05-22 18:55:33.689673245 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ #
+ # Copyright 2009 Facebook
+ #
+diff -aurx .git bup-upstream/lib/tornado/database.py bup-patched/lib/tornado/database.py
+--- bup-upstream/lib/tornado/database.py	2013-05-22 18:46:04.034197027 -0700
++++ bup-patched/lib/tornado/database.py	2013-05-22 18:55:33.686339892 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ #
+ # Copyright 2009 Facebook
+ #
+diff -aurx .git bup-upstream/lib/tornado/escape.py bup-patched/lib/tornado/escape.py
+--- bup-upstream/lib/tornado/escape.py	2013-05-22 18:46:04.034197027 -0700
++++ bup-patched/lib/tornado/escape.py	2013-05-22 18:55:33.646339253 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ #
+ # Copyright 2009 Facebook
+ #
+diff -aurx .git bup-upstream/lib/tornado/httpclient.py bup-patched/lib/tornado/httpclient.py
+--- bup-upstream/lib/tornado/httpclient.py	2013-05-22 18:46:04.034197027 -0700
++++ bup-patched/lib/tornado/httpclient.py	2013-05-22 18:55:33.636339118 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ #
+ # Copyright 2009 Facebook
+ #
+diff -aurx .git bup-upstream/lib/tornado/httpserver.py bup-patched/lib/tornado/httpserver.py
+--- bup-upstream/lib/tornado/httpserver.py	2013-05-22 18:46:04.037530415 -0700
++++ bup-patched/lib/tornado/httpserver.py	2013-05-22 18:55:33.629672349 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ #
+ # Copyright 2009 Facebook
+ #
+diff -aurx .git bup-upstream/lib/tornado/httputil.py bup-patched/lib/tornado/httputil.py
+--- bup-upstream/lib/tornado/httputil.py	2013-05-22 18:46:04.037530415 -0700
++++ bup-patched/lib/tornado/httputil.py	2013-05-22 18:55:33.639672526 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ #
+ # Copyright 2009 Facebook
+ #
+diff -aurx .git bup-upstream/lib/tornado/__init__.py bup-patched/lib/tornado/__init__.py
+--- bup-upstream/lib/tornado/__init__.py	2013-05-22 18:46:04.034197027 -0700
++++ bup-patched/lib/tornado/__init__.py	2013-05-22 18:55:33.616338784 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ #
+ # Copyright 2009 Facebook
+ #
+diff -aurx .git bup-upstream/lib/tornado/ioloop.py bup-patched/lib/tornado/ioloop.py
+--- bup-upstream/lib/tornado/ioloop.py	2013-05-22 18:46:04.037530415 -0700
++++ bup-patched/lib/tornado/ioloop.py	2013-05-22 18:55:33.626338976 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ #
+ # Copyright 2009 Facebook
+ #
+diff -aurx .git bup-upstream/lib/tornado/iostream.py bup-patched/lib/tornado/iostream.py
+--- bup-upstream/lib/tornado/iostream.py	2013-05-22 18:46:04.037530415 -0700
++++ bup-patched/lib/tornado/iostream.py	2013-05-22 18:55:33.649672635 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ #
+ # Copyright 2009 Facebook
+ #
+diff -aurx .git bup-upstream/lib/tornado/locale.py bup-patched/lib/tornado/locale.py
+--- bup-upstream/lib/tornado/locale.py	2013-05-22 18:46:04.037530415 -0700
++++ bup-patched/lib/tornado/locale.py	2013-05-22 18:55:33.613005407 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ #
+ # Copyright 2009 Facebook
+ #
+diff -aurx .git bup-upstream/lib/tornado/options.py bup-patched/lib/tornado/options.py
+--- bup-upstream/lib/tornado/options.py	2013-05-22 18:46:04.037530415 -0700
++++ bup-patched/lib/tornado/options.py	2013-05-22 18:55:33.619672180 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ #
+ # Copyright 2009 Facebook
+ #
+diff -aurx .git bup-upstream/lib/tornado/s3server.py bup-patched/lib/tornado/s3server.py
+--- bup-upstream/lib/tornado/s3server.py	2013-05-22 18:46:04.037530415 -0700
++++ bup-patched/lib/tornado/s3server.py	2013-05-22 18:55:33.666339604 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ #
+ # Copyright 2009 Facebook
+ #
+diff -aurx .git bup-upstream/lib/tornado/template.py bup-patched/lib/tornado/template.py
+--- bup-upstream/lib/tornado/template.py	2013-05-22 18:46:04.037530415 -0700
++++ bup-patched/lib/tornado/template.py	2013-05-22 18:55:33.643005884 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ #
+ # Copyright 2009 Facebook
+ #
+diff -aurx .git bup-upstream/lib/tornado/test/test_ioloop.py bup-patched/lib/tornado/test/test_ioloop.py
+--- bup-upstream/lib/tornado/test/test_ioloop.py	2013-05-22 18:46:04.037530415 -0700
++++ bup-patched/lib/tornado/test/test_ioloop.py	2013-05-22 18:55:33.669672961 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ 
+ import unittest
+ import time
+diff -aurx .git bup-upstream/lib/tornado/web.py bup-patched/lib/tornado/web.py
+--- bup-upstream/lib/tornado/web.py	2013-05-22 18:46:04.040863821 -0700
++++ bup-patched/lib/tornado/web.py	2013-05-22 18:55:33.659672811 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ #
+ # Copyright 2009 Facebook
+ #
+diff -aurx .git bup-upstream/lib/tornado/websocket.py bup-patched/lib/tornado/websocket.py
+--- bup-upstream/lib/tornado/websocket.py	2013-05-22 18:46:04.040863821 -0700
++++ bup-patched/lib/tornado/websocket.py	2013-05-22 18:55:33.666339604 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ #
+ # Copyright 2009 Facebook
+ #
+diff -aurx .git bup-upstream/lib/tornado/wsgi.py bup-patched/lib/tornado/wsgi.py
+--- bup-upstream/lib/tornado/wsgi.py	2013-05-22 18:46:04.040863821 -0700
++++ bup-patched/lib/tornado/wsgi.py	2013-05-22 18:55:33.683006541 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ #
+ # Copyright 2009 Facebook
+ #
+diff -aurx .git bup-upstream/main.py bup-patched/main.py
+--- bup-upstream/main.py	2013-05-22 18:46:04.040863821 -0700
++++ bup-patched/main.py	2013-05-22 18:55:33.693006631 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys, os, subprocess, signal, getopt
+ 
+ argv = sys.argv
+diff -aurx .git bup-upstream/t/hardlink-sets bup-patched/t/hardlink-sets
+--- bup-upstream/t/hardlink-sets	2013-05-22 18:46:04.040863821 -0700
++++ bup-patched/t/hardlink-sets	2013-05-22 18:55:33.696340055 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ 
+ import os, stat, sys
+ 
+diff -aurx .git bup-upstream/t/mksock bup-patched/t/mksock
+--- bup-upstream/t/mksock	2013-05-22 18:46:04.040863821 -0700
++++ bup-patched/t/mksock	2013-05-22 18:55:33.699673438 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ 
+ import socket, sys
+ 
+diff -aurx .git bup-upstream/t/some-owner bup-patched/t/some-owner
+--- bup-upstream/t/some-owner	2013-05-22 18:46:04.047530568 -0700
++++ bup-patched/t/some-owner	2013-05-22 18:55:33.696340055 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ 
+ import grp
+ import pwd
+diff -aurx .git bup-upstream/t/unknown-owner bup-patched/t/unknown-owner
+--- bup-upstream/t/unknown-owner	2013-05-22 18:46:04.054197342 -0700
++++ bup-patched/t/unknown-owner	2013-05-22 18:55:33.703006820 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ 
+ import grp
+ import pwd
+diff -aurx .git bup-upstream/wvtest.py bup-patched/wvtest.py
+--- bup-upstream/wvtest.py	2013-05-22 18:46:04.054197342 -0700
++++ bup-patched/wvtest.py	2013-05-22 18:55:33.706340204 -0700
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ #
+ # WvTest:
+ #   Copyright (C)2007-2012 Versabanq Innovations Inc. and contributors.
