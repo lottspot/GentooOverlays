@@ -30,6 +30,7 @@ RDEPEND="${DEPEND}"
 
 src_prepare() {
 	EPATCH_OPTS="-p1" epatch "${FILESDIR}/${PN}-python2.patch"
+	epatch_user
 }
 
 src_configure() {
