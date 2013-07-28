@@ -328,6 +328,14 @@ src_configure() {
 		myconf+=" --add-module=${HTTP_NAXSI_MODULE_WD}"
 	fi
 
+	if use tcp-proxy; then
+		myconf+=" --add-module=${FILESDIR}/tcp-proxy-module"
+	fi
+
+	if use ldap-auth; then
+		myconf+=" --add-module=${FILESDIR}/auth-ldap-module"
+	fi
+
 	if use http || use http-cache; then
 		http_enabled=1
 	fi

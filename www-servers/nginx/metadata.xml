@@ -16,6 +16,8 @@
 		<flag name='libatomic'>Use libatomic instead of builtin atomic operations</flag>
 		<flag name='pcre-jit'>Enable JIT for pcre</flag>
 		<flag name='ssl'>Enable HTTPS module for http. Enable SSL/TLS support for POP3/IMAP/SMTP for mail.</flag>
+		<flag name='tcp-proxy'>Enable TCP websocket proxying capability</flag>
+		<flag name='ldap-auth'>Enable LDAP based authentication</flag>
 	</use>
 	<upstream>
 		<changelog>http://nginx.org/en/CHANGES</changelog>
