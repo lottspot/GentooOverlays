@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<email>james@lottspot.com</email>
+		<name>James Lott</name>
+	<longdescription lang="en">
+		wpa_actiond is an Arch Linux project developed as an interface to wpa_ctrl, the wpa_supplicant C interface. wpa_actiond is used to handle automatic connect/disconnect events on wireless interfaces, and is leveraged in Arch's netcfg tool and the more modern netctl, which replaced it. netctl is available in gentoo's portage tree, and wpa_actiond is required in order to leverage netctl's netctl-auto.
+	</longdescription>
+</pkgmetadata>
