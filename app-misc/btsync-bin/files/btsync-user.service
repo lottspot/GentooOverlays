@@ -1,0 +1,12 @@
+[Unit]
+Description=Bittorent Sync service for %i
+After=network.target
+ 
+[Service]
+User=%i
+ExecStartPre=/usr/libexec/btsync/check_config.sh %i
+ExecStart=/usr/libexec/btsync/btsync --config %h/.btsync/conf/btsync.conf --nodaemon
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
