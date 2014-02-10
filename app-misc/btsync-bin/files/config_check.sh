@@ -1,6 +1,6 @@
 #!/bin/bash
 DIR_BTSYNC="${HOME}.btsync"
-DIR_CONFIG="$DIR_BTSYNC/config"
+DIR_CONFIG="$DIR_BTSYNC/conf"
 DIR_SHARE="$DIR_BTSYNC/share"
 DIR_DATA="$DIR_BTSYNC/data"
 FILE_CONFIG="btsync.conf"

@@ -34,9 +34,14 @@ src_compile(){
 	true
 }
 
+pkg_preinst(){
+	enewuser btsync
+	enewgroup btsync
+}
+
 src_install(){
 	dodir /var/lib/btsync/data
-	chown btsync:btsync /var/lib/btsync/data
+	fowners btsync:btsync /var/lib/btsync/data
 	exeinto /usr/libexec/btsync
 	insinto /usr/share/btsync
 	doexe btsync
@@ -48,7 +53,3 @@ src_install(){
 	systemd_newunit ${FILESDIR}/btsync-user.service 'btsync@.service'
 }
 
-pkg_postinst(){
-	enewuser btsync
-	enewgroup btsync
-}
