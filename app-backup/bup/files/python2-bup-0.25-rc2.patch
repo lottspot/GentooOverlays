@@ -1,0 +1,573 @@
+diff --git a/Makefile b/Makefile
+index 216bf98..cba20ae 100644
+--- a/Makefile
++++ b/Makefile
+@@ -16,7 +16,7 @@ bup: lib/bup/_version.py lib/bup/_helpers$(SOEXT) cmds
+ Documentation/all: bup
+ 
+ INSTALL=install
+-PYTHON=python
++PYTHON=python2
+ PREFIX=/usr
+ MANDIR=$(DESTDIR)$(PREFIX)/share/man
+ DOCDIR=$(DESTDIR)$(PREFIX)/share/doc/bup
+diff --git a/cmd/bloom-cmd.py b/cmd/bloom-cmd.py
+index e6a7375..50d716d 100755
+--- a/cmd/bloom-cmd.py
++++ b/cmd/bloom-cmd.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys, glob, tempfile
+ from bup import options, git, bloom
+ from bup.helpers import *
+diff --git a/cmd/daemon-cmd.py b/cmd/daemon-cmd.py
+index b92716f..045f7e1 100755
+--- a/cmd/daemon-cmd.py
++++ b/cmd/daemon-cmd.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys, getopt, socket, subprocess, fcntl
+ from bup import options, path
+ from bup.helpers import *
+diff --git a/cmd/damage-cmd.py b/cmd/damage-cmd.py
+index 49dbed0..a1e6c2d 100755
+--- a/cmd/damage-cmd.py
++++ b/cmd/damage-cmd.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys, os, random
+ from bup import options
+ from bup.helpers import *
+diff --git a/cmd/drecurse-cmd.py b/cmd/drecurse-cmd.py
+index 218b2ef..c70b4a2 100755
+--- a/cmd/drecurse-cmd.py
++++ b/cmd/drecurse-cmd.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ from bup import options, drecurse
+ from bup.helpers import *
+ 
+diff --git a/cmd/fsck-cmd.py b/cmd/fsck-cmd.py
+index 794c755..e68f624 100755
+--- a/cmd/fsck-cmd.py
++++ b/cmd/fsck-cmd.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys, os, glob, subprocess
+ from bup import options, git
+ from bup.helpers import *
+diff --git a/cmd/ftp-cmd.py b/cmd/ftp-cmd.py
+index baa1e08..846649d 100755
+--- a/cmd/ftp-cmd.py
++++ b/cmd/ftp-cmd.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys, os, stat, fnmatch
+ from bup import options, git, shquote, vfs, ls
+ from bup.helpers import *
+diff --git a/cmd/fuse-cmd.py b/cmd/fuse-cmd.py
+index 9253a18..70fab61 100755
+--- a/cmd/fuse-cmd.py
++++ b/cmd/fuse-cmd.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys, os, errno
+ from bup import options, git, vfs
+ from bup.helpers import *
+diff --git a/cmd/help-cmd.py b/cmd/help-cmd.py
+index 56a4148..ed7cd61 100755
+--- a/cmd/help-cmd.py
++++ b/cmd/help-cmd.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys, os, glob
+ from bup import options, path
+ 
+diff --git a/cmd/index-cmd.py b/cmd/index-cmd.py
+index 4904c01..8d9f6ee 100755
+--- a/cmd/index-cmd.py
++++ b/cmd/index-cmd.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ 
+ import sys, stat, time, os, errno, re
+ from bup import metadata, options, git, index, drecurse, hlinkdb
+diff --git a/cmd/init-cmd.py b/cmd/init-cmd.py
+index 2e4a151..cd86612 100755
+--- a/cmd/init-cmd.py
++++ b/cmd/init-cmd.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys
+ 
+ from bup import git, options, client
+diff --git a/cmd/join-cmd.py b/cmd/join-cmd.py
+index 042b402..dfbf5a5 100755
+--- a/cmd/join-cmd.py
++++ b/cmd/join-cmd.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys
+ from bup import git, options, client
+ from bup.helpers import *
+diff --git a/cmd/list-idx-cmd.py b/cmd/list-idx-cmd.py
+index a3e3dc9..a9f6477 100755
+--- a/cmd/list-idx-cmd.py
++++ b/cmd/list-idx-cmd.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys, os
+ from bup import git, options
+ from bup.helpers import *
+diff --git a/cmd/ls-cmd.py b/cmd/ls-cmd.py
+index 581d6e1..0c9a46f 100755
+--- a/cmd/ls-cmd.py
++++ b/cmd/ls-cmd.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys
+ from bup import git, vfs, ls
+ from bup.helpers import *
+diff --git a/cmd/margin-cmd.py b/cmd/margin-cmd.py
+index 9b7fd60..798512b 100755
+--- a/cmd/margin-cmd.py
++++ b/cmd/margin-cmd.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys, struct, math
+ from bup import options, git, _helpers
+ from bup.helpers import *
+diff --git a/cmd/memtest-cmd.py b/cmd/memtest-cmd.py
+index 0e3cf0c..6798d88 100755
+--- a/cmd/memtest-cmd.py
++++ b/cmd/memtest-cmd.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys, re, struct, time, resource
+ from bup import git, bloom, midx, options, _helpers
+ from bup.helpers import *
+diff --git a/cmd/meta-cmd.py b/cmd/meta-cmd.py
+index 0ef91ab..7141ac5 100755
+--- a/cmd/meta-cmd.py
++++ b/cmd/meta-cmd.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ 
+ # Copyright (C) 2010 Rob Browning
+ #
+diff --git a/cmd/midx-cmd.py b/cmd/midx-cmd.py
+index 62011e4..a8b3222 100755
+--- a/cmd/midx-cmd.py
++++ b/cmd/midx-cmd.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys, math, struct, glob, resource
+ import tempfile
+ from bup import options, git, midx, _helpers, xstat
+diff --git a/cmd/mux-cmd.py b/cmd/mux-cmd.py
+index 299dec9..ee82ff9 100755
+--- a/cmd/mux-cmd.py
++++ b/cmd/mux-cmd.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import os, sys, subprocess, struct
+ from bup import options
+ from bup.helpers import *
+diff --git a/cmd/newliner-cmd.py b/cmd/newliner-cmd.py
+index 68d327b..c485ee5 100755
+--- a/cmd/newliner-cmd.py
++++ b/cmd/newliner-cmd.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys, os, re
+ from bup import options
+ from bup import _helpers   # fixes up sys.argv on import
+diff --git a/cmd/on--server-cmd.py b/cmd/on--server-cmd.py
+index 327c81f..bca9ac9 100755
+--- a/cmd/on--server-cmd.py
++++ b/cmd/on--server-cmd.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys, os, struct
+ from bup import options, helpers
+ 
+diff --git a/cmd/on-cmd.py b/cmd/on-cmd.py
+index cebff1a..ff9564d 100755
+--- a/cmd/on-cmd.py
++++ b/cmd/on-cmd.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys, os, struct, getopt, subprocess, signal
+ from bup import options, ssh, path
+ from bup.helpers import *
+diff --git a/cmd/random-cmd.py b/cmd/random-cmd.py
+index 4be3660..3fd8a6c 100755
+--- a/cmd/random-cmd.py
++++ b/cmd/random-cmd.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys
+ from bup import options, _helpers
+ from bup.helpers import *
+diff --git a/cmd/restore-cmd.py b/cmd/restore-cmd.py
+index 124578e..5ded6ba 100755
+--- a/cmd/restore-cmd.py
++++ b/cmd/restore-cmd.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import errno, sys, stat, re
+ from bup import options, git, metadata, vfs
+ from bup.helpers import *
+diff --git a/cmd/save-cmd.py b/cmd/save-cmd.py
+index 66d56e2..481905d 100755
+--- a/cmd/save-cmd.py
++++ b/cmd/save-cmd.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys, stat, time, math
+ from bup import hashsplit, git, options, index, client, metadata, hlinkdb
+ from bup.helpers import *
+diff --git a/cmd/server-cmd.py b/cmd/server-cmd.py
+index 43a3fce..10ec142 100755
+--- a/cmd/server-cmd.py
++++ b/cmd/server-cmd.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import os, sys, struct
+ from bup import options, git
+ from bup.helpers import *
+diff --git a/cmd/split-cmd.py b/cmd/split-cmd.py
+index de1cffe..7f24bce 100755
+--- a/cmd/split-cmd.py
++++ b/cmd/split-cmd.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys, time
+ from bup import hashsplit, git, options, client
+ from bup.helpers import *
+diff --git a/cmd/tag-cmd.py b/cmd/tag-cmd.py
+index 17037b3..1712bb5 100755
+--- a/cmd/tag-cmd.py
++++ b/cmd/tag-cmd.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ """Tag a commit in the bup repository.
+ Creating a tag on a commit can be used for avoiding automatic cleanup from
+ removing this commit due to old age.
+diff --git a/cmd/tick-cmd.py b/cmd/tick-cmd.py
+index 4d462ad..7b24d1f 100755
+--- a/cmd/tick-cmd.py
++++ b/cmd/tick-cmd.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys, time
+ from bup import options
+ 
+diff --git a/cmd/version-cmd.py b/cmd/version-cmd.py
+index 1a68a6c..b25cf3b 100755
+--- a/cmd/version-cmd.py
++++ b/cmd/version-cmd.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys
+ from bup import options
+ from bup.helpers import *
+diff --git a/cmd/web-cmd.py b/cmd/web-cmd.py
+index 6e368a2..3f95d09 100755
+--- a/cmd/web-cmd.py
++++ b/cmd/web-cmd.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys, stat, urllib, mimetypes, posixpath, time
+ import tornado.httpserver
+ import tornado.ioloop
+diff --git a/cmd/xstat-cmd.py b/cmd/xstat-cmd.py
+index 11b0b58..83d48e5 100755
+--- a/cmd/xstat-cmd.py
++++ b/cmd/xstat-cmd.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ # Copyright (C) 2010 Rob Browning
+ #
+ # This code is covered under the terms of the GNU Library General
+diff --git a/lib/tornado/__init__.py b/lib/tornado/__init__.py
+index 8f73764..2aff45d 100644
+--- a/lib/tornado/__init__.py
++++ b/lib/tornado/__init__.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ #
+ # Copyright 2009 Facebook
+ #
+diff --git a/lib/tornado/auth.py b/lib/tornado/auth.py
+index 4575119..a86c3cc 100644
+--- a/lib/tornado/auth.py
++++ b/lib/tornado/auth.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ #
+ # Copyright 2009 Facebook
+ #
+diff --git a/lib/tornado/autoreload.py b/lib/tornado/autoreload.py
+index 876c76d..4157c86 100644
+--- a/lib/tornado/autoreload.py
++++ b/lib/tornado/autoreload.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ #
+ # Copyright 2009 Facebook
+ #
+diff --git a/lib/tornado/database.py b/lib/tornado/database.py
+index 0787021..d6f76f3 100644
+--- a/lib/tornado/database.py
++++ b/lib/tornado/database.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ #
+ # Copyright 2009 Facebook
+ #
+diff --git a/lib/tornado/escape.py b/lib/tornado/escape.py
+index 8852ca2..fbdcc23 100644
+--- a/lib/tornado/escape.py
++++ b/lib/tornado/escape.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ #
+ # Copyright 2009 Facebook
+ #
+diff --git a/lib/tornado/httpclient.py b/lib/tornado/httpclient.py
+index 4d97eeb..d9adee4 100644
+--- a/lib/tornado/httpclient.py
++++ b/lib/tornado/httpclient.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ #
+ # Copyright 2009 Facebook
+ #
+diff --git a/lib/tornado/httpserver.py b/lib/tornado/httpserver.py
+index 267960a..5a95862 100644
+--- a/lib/tornado/httpserver.py
++++ b/lib/tornado/httpserver.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ #
+ # Copyright 2009 Facebook
+ #
+diff --git a/lib/tornado/httputil.py b/lib/tornado/httputil.py
+index 5e563e8..e06522a 100755
+--- a/lib/tornado/httputil.py
++++ b/lib/tornado/httputil.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ #
+ # Copyright 2009 Facebook
+ #
+diff --git a/lib/tornado/ioloop.py b/lib/tornado/ioloop.py
+index c1345cb..79caee4 100644
+--- a/lib/tornado/ioloop.py
++++ b/lib/tornado/ioloop.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ #
+ # Copyright 2009 Facebook
+ #
+diff --git a/lib/tornado/iostream.py b/lib/tornado/iostream.py
+index c22ef2c..8b149f6 100644
+--- a/lib/tornado/iostream.py
++++ b/lib/tornado/iostream.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ #
+ # Copyright 2009 Facebook
+ #
+diff --git a/lib/tornado/locale.py b/lib/tornado/locale.py
+index a2d9b2b..d270071 100644
+--- a/lib/tornado/locale.py
++++ b/lib/tornado/locale.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ #
+ # Copyright 2009 Facebook
+ #
+diff --git a/lib/tornado/options.py b/lib/tornado/options.py
+index a0bb1a7..a8dbc38 100644
+--- a/lib/tornado/options.py
++++ b/lib/tornado/options.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ #
+ # Copyright 2009 Facebook
+ #
+diff --git a/lib/tornado/s3server.py b/lib/tornado/s3server.py
+index 2e8a97d..58027bb 100644
+--- a/lib/tornado/s3server.py
++++ b/lib/tornado/s3server.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ #
+ # Copyright 2009 Facebook
+ #
+diff --git a/lib/tornado/template.py b/lib/tornado/template.py
+index b807cc6..839891f 100644
+--- a/lib/tornado/template.py
++++ b/lib/tornado/template.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ #
+ # Copyright 2009 Facebook
+ #
+diff --git a/lib/tornado/test/test_ioloop.py b/lib/tornado/test/test_ioloop.py
+index 2541fa8..1811ef1 100755
+--- a/lib/tornado/test/test_ioloop.py
++++ b/lib/tornado/test/test_ioloop.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ 
+ import unittest
+ import time
+diff --git a/lib/tornado/web.py b/lib/tornado/web.py
+index 3beac23..96ea5f8 100644
+--- a/lib/tornado/web.py
++++ b/lib/tornado/web.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ #
+ # Copyright 2009 Facebook
+ #
+diff --git a/lib/tornado/websocket.py b/lib/tornado/websocket.py
+index 3c5223a..2c1628f 100644
+--- a/lib/tornado/websocket.py
++++ b/lib/tornado/websocket.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ #
+ # Copyright 2009 Facebook
+ #
+diff --git a/lib/tornado/wsgi.py b/lib/tornado/wsgi.py
+index de35669..b41cd1e 100644
+--- a/lib/tornado/wsgi.py
++++ b/lib/tornado/wsgi.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ #
+ # Copyright 2009 Facebook
+ #
+diff --git a/main.py b/main.py
+index 3554179..b9bb277 100755
+--- a/main.py
++++ b/main.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ import sys, os, subprocess, signal, getopt
+ 
+ argv = sys.argv
+diff --git a/t/hardlink-sets b/t/hardlink-sets
+index 653b4d2..d3852be 100755
+--- a/t/hardlink-sets
++++ b/t/hardlink-sets
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ 
+ import os, stat, sys
+ 
+diff --git a/t/mksock b/t/mksock
+index ee2dbfe..370b753 100755
+--- a/t/mksock
++++ b/t/mksock
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ 
+ import socket, sys
+ 
+diff --git a/t/root-status b/t/root-status
+index 9fb12cb..715a651 100755
+--- a/t/root-status
++++ b/t/root-status
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ 
+ import sys
+ 
+diff --git a/t/some-owner b/t/some-owner
+index e200fae..bf100b8 100755
+--- a/t/some-owner
++++ b/t/some-owner
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ 
+ import grp
+ import pwd
+diff --git a/t/unknown-owner b/t/unknown-owner
+index 212d146..90c177b 100755
+--- a/t/unknown-owner
++++ b/t/unknown-owner
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ 
+ import grp
+ import pwd
+diff --git a/wvtest.py b/wvtest.py
+index 27749e3..7ef7547 100755
+--- a/wvtest.py
++++ b/wvtest.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ #
+ # WvTest:
+ #   Copyright (C)2007-2012 Versabanq Innovations Inc. and contributors.
