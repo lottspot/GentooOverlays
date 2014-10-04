@@ -10,11 +10,11 @@ DESCRIPTION="Bup: it backs stuff up"
 HOMEPAGE=""
 SRC_URI=""
 EGIT_REPO_URI="git://github.com/bup/bup.git"
-EGIT_COMMIT="53ffc4d336b06b3cecac0d817d192d22cb75a1bd"
+EGIT_COMMIT="5a7fd007e89bb343ab2024d9a87d54bbee997bbf"
 
 LICENSE=""
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="amd64 x86"
 IUSE=""
 
 DEPEND="|| (
@@ -32,7 +32,7 @@ RDEPEND="${DEPEND}
 
 src_prepare(){
 	epatch_user
-	epatch "${FILESDIR}/bup-0.25_rc2-python2.patch"
+	epatch "${FILESDIR}/${PF}-python2.patch"
 }
 
 src_configure(){
